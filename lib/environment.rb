@@ -2,4 +2,6 @@
 
 require_relative "show_cli_group4/version"
 
+require "bundler"
+Bundler.require
 
