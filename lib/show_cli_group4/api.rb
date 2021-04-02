@@ -1,12 +1,12 @@
 class API 
-   def self.get_data 
-    response = RestClient.get('http://api.tvmaze.com/search/shows?q=friends')
+   def self.get_data(input) 
+    response = RestClient.get("http://api.tvmaze.com/search/shows?q=#{input}")
     shows = JSON.parse(response)
     shows.each do |show|
         new_show = show["show"]
-    Show.new(new_show["name"], new_show["genres"], new_show["rating"])
-    
+      #   binding.pry
+    Show.new(new_show)
    end
-#    binding.pry
+   #  binding.pry
    end
 end
